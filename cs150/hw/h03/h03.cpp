@@ -9,7 +9,7 @@
 using namespace std;
 using stringIn = const string&;
 
-string STUDENT = "sgilbert";  // Add your Canvas login name
+string STUDENT = "Who Are You?";  // Add your Canvas login name
 extern string ASSIGNMENT;
 
 // Function Prototypes

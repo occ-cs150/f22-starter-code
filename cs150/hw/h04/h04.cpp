@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-string STUDENT = "sgilbert";  // Add your Canvas login name
+string STUDENT = "Who Are You?";  // Add your Canvas login name
 extern string ASSIGNMENT;
 
 // Add your function declaration here
