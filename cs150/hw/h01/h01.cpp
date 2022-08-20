@@ -11,7 +11,6 @@ using namespace std;
 string STUDENT = "Who Are You?";  // Add your Canvas login name
 extern string ASSIGNMENT;
 
-
 /**
  * One line describing what this program does.
  * @return 0 for success.

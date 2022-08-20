@@ -9,7 +9,7 @@
 using namespace std;
 using stringIn = const string&;
 
-string STUDENT = "WHO ARE YOU"; // Add your Canvas login name
+string STUDENT = "sgilbert";  // Add your Canvas login name
 extern string ASSIGNMENT;
 
 // Function Prototypes
@@ -28,7 +28,6 @@ const double INVALID_INPUT = -2.0;
  */
 int run()
 {
-	// Don't change anything inside this function
 	printTitle();
 	string letterGrade = getInput();
 	double points = letterToPoints(letterGrade);
@@ -38,3 +37,4 @@ int run()
 }
 
 // Implement your functions here
+

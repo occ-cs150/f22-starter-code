@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-string STUDENT = "WHO ARE YOU";  // Add your Canvas login name
+string STUDENT = "sgilbert";  // Add your Canvas login name
 extern string ASSIGNMENT;
 
 // Add your function declaration here
@@ -21,6 +21,7 @@ extern string ASSIGNMENT;
 int run()
 {
 	// DON'T CHANGE ANYTHING IN THIS FUNCTION
+
     cout << STUDENT << "-" << ASSIGNMENT << "-Graduation Calculator" << endl;
 	cout << "-----------------------------------------" << endl;
 

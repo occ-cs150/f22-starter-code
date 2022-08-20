@@ -4,22 +4,25 @@
  *  @file h20.cpp
  */
 #include <string>
-#include <iostream>
+#include <cmath>
 using namespace std;
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 #include "h20.h"
+// Add your implementation here
 
-// Add your code here
+
+
 
 
 
 
 /////////////// STUDENT TESTING ////////////////////
+#include <sstream>
 int run()
 {
-    // Write your own tests here
+    cout << "Student testing" << endl;
 
     return 0;
 }

@@ -6,31 +6,50 @@
 #ifndef H25_H_
 #define H25_H_
 
+// WRITE AND TEST THE GREENSCREEN FUNCTION FIRST
 /**
- * Reverses the C-style string pointed to by s.
- *
- * @param s a pointer to the character in a C-style string.
+ * Sets all green pixels to transparent.
+ * A pixel is green if the green component is at least twice as large
+ * as the maximum of its red and blue components.
+ * @param data a constant pointer to the image data.
+ * @param width the width of the image in pixels
+ * @param height the height of the image in pixels
+ * Assume that there are 4 bytes per pixel (RGBA)
  */
-void reverse(char * s);
+void greenScreen(unsigned char * const img, int width, int height);
+
 
 /**
- * Finds the first occurrence of str2 which appears in str1.
- * Returns a pointer to the first occurrence of str2 in str1.
- * If no match is found, then a null pointer is returned.
- * If str2 points to a string of zero length, then the argument str1 is returned.
- *
- * @param str1 C-string to search through.
- * @param str2 C-string to search for.
- * @return
+ * Combines a background and foreground. The foreground
+ * is "green-screened". The pixels are combined with
+ * opaque pixels from foreground and backround showing
+ * through the transparent ones.
+ * @param data a constant pointer to the image data.
+ * @param width the width of the image in pixels
+ * @param height the height of the image in pixels
+ *  - Assume that there are 4 bytes per pixel (RGBA)
+ *  - Asume both images are the same size.
  */
-const char * findStr(const char *str1, const char *str2);
+void composite( unsigned char * const bg,
+                unsigned char * const fg,
+                int width, int height);
 
-// DO NOT CHANGE THESE LINES
-#define strcmp static_assert(false, "strcmp not allowed");
-#define strstr static_assert(false, "strstr not allowed");
-#define strlen(s) static_assert(false, "strlen not allowed");
-#define strcat(d, s) static_assert(false, "strcat not allowed");
-#define strcpy(d, s) static_assert(false, "strcpy not allowed");
-#define string static_assert(false, "string not allowed");
+
+// Functions from stb_image and stb_image_write
+// These are C functions
+extern "C" {
+unsigned char* stbi_load(const char* fileName,
+    int* width, int* height, int* bitsPerChannel,
+    int desiredBpp=4);
+
+ int stbi_write_png(const char* fName, int width, int height,
+    int comp, const void *data, int stride);
+ int stbi_write_bmp(const char* fName, int width, int height,
+    int comp, const void *data);
+ int stbi_write_jpg(const char* fName, int width, int height,
+    int comp, const void *data, int quality);
+
+ void stbi_image_free (void *);
+};
 
 #endif

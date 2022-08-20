@@ -1,17 +1,18 @@
 /**
     @file h17.h
     @author Stephen Gilbert
-    @version Declarations for CS 150 Homework
+    @version CS 150 Function Declarations
 */
 #ifndef H17_H_
 #define H17_H_
-#include <vector>
-#include <string>
+
+#include <iostream>
+
 /**
- *  Opens a file and returns a vector<string> containing words.
- *  @param filename contains the path needed to open the file.
- *  @return a vector<string> of words.
+ * Counts the tokens on each line of input producing various statistics.
+ * @param in the input stream to process.
+ * @param out the output stream to write to.
  */
-std::vector<std::string> fileToWords(const std::string& filename);
+void tokenStats(std::istream& in, std::ostream& out);
 
 #endif

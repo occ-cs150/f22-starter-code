@@ -2,76 +2,48 @@
     @file h32.h
     @author Stephen Gilbert
     @version Declarations for CS 150 Homework
+    // DON'T CHANGE THIS FILE
 */
 #ifndef H32_H_
 #define H32_H_
+#include <iostream>
+#include <memory>
+const size_t INITIAL_CAPACITY = 2;
 
-#include <vector>
-
-using UC = unsigned char;
-struct Pixel {UC red=0, green=0, blue=0, alpha=255;};
-const Pixel GRAY{128, 128, 128, 255};
-const Pixel TRANSPARENT{0, 0, 0, 0};
-
-class Image
+struct FlexArray
 {
-public:
-    Image() = default;
-    explicit Image(const std::string& path);
-    Image(unsigned width, unsigned height);
-
-    unsigned width() const;
-    unsigned height() const;
-    unsigned size() const;
-
-    Pixel* begin();
-    Pixel* end();
-
-    void fill(const Pixel& color);
-
-    // New for this exercise
-    /**
-     * Rotates an image in both the dx and dy directions.
-     * Pixels wrap around as required.
-     * @param dx the amount to shift in the x dimension.
-     * @param dy the amount to shift in the y dimension
-     * Assume 4 bits per pixel
-     */
-    void translate(int dx, int dy);
-
-    /**
-     * Overloaded subscript operators.
-     * @param idx index from 0 < size
-     * @throws out_of_range if invalid index
-     */
-    const Pixel& operator[](unsigned idx) const;
-    Pixel& operator[](unsigned idx);
-
-    // Write the operators above this
-
-    bool load(const std::string& path);
-    bool save(const std::string& path);
-    bool operator==(const Image& rhs);
-private:
-    unsigned m_width{0}, m_height{0};
-    std::vector<Pixel> m_pixels;
+    size_t size_ = 0;
+    std::unique_ptr<int[]> data_;
 };
 
-// Functions from stb_image and stb_image_write
-// These are C functions
-extern "C" {
-unsigned char* stbi_load(const char* fileName,
-    int* width, int* height, int* bitsPerChannel,
-    int desiredBpp=4);
+/**
+ * Read integers from a stream into a FlexArray.
+ * @param[in] in the stream to read from.
+ * @param[out] the FlexArray to store the data in
+ * @return a reference to the modified FlexArray
+ * @post size_ will contain the number of elements
+ * @post data_ will contain exactly size_ elements
+ * @post in will be at end of file or a non-integer
+ */
+FlexArray& readData(std::istream& in, FlexArray& a);
 
- int stbi_write_png(const char* fName, int width, int height,
-    int comp, const void *data, int stride);
- int stbi_write_bmp(const char* fName, int width, int height,
-    int comp, const void *data);
- int stbi_write_jpg(const char* fName, int width, int height,
-    int comp, const void *data, int quality);
+/**
+ * Return a string representation of a FlexArray.
+ * @param a the array to represent.
+ * @return a comma separated, brace delimited contents.
+ */
+std::string toString(const FlexArray& a);
 
- void stbi_image_free (void *);
-};
+// Inline I/O operators. Leave as is.
+inline std::ostream& operator<<(std::ostream& out, const FlexArray& a)
+{
+    out << toString(a);
+    return out;
+}
 
+inline std::istream& operator>>(std::istream& in, FlexArray& a)
+{
+    readData(in, a);
+    return in;
+}
 #endif

@@ -1,6 +1,6 @@
 EXE = h11
 CXX = @g++
-CXXFLAGS = -finstrument-functions -std=c++17 -Wall -Wextra -Werror -O0 -ggdb3 -fsanitize=signed-integer-overflow -fsanitize=undefined -Wno-unused-parameter -Wno-unused-variable -Wshadow
+CXXFLAGS = -std=c++17 -Wall -Wextra -Werror -O0 -ggdb3 -fsanitize=signed-integer-overflow -fsanitize=undefined -Wno-unused-parameter -Wno-unused-variable -Wshadow
 LIBS = $(EXE)
 SRC = $(EXE).cpp
 OBJS = $(EXE).o
@@ -15,11 +15,14 @@ clean:
 lint:
 	clang++ --analyze -Xanalyzer -analyzer-output=text $(EXE).cpp
 
+debug: $(EXE)
+	debug50 ./$(EXE)
+
 run: $(EXE)
 	./$(EXE)
 
 test: $(EXE)
-	./$(EXE) -t
+	./$(EXE) -t ; true
 
 submit: $(EXE)
 	@./$(EXE) -t 1> /dev/null 2> results.txt; true

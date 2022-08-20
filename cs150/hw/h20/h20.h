@@ -1,38 +1,26 @@
 /**
     @file h20.h
-    @author Stephen Gilbert
-    @version Declarations for CS 150 Homework
+    @author YOUR NAME HERE
+    @date what day and meeting time
+    Declarations for CS 150 Homework
 */
 #ifndef H20_H_
 #define H20_H_
 
+#include "point.h"
+
+// Place your Triangle structure definitions here
+
+
+
+
+
+
 /**
- * Sets all green pixels to transparent.
- * A pixel is green if the green component is at least twice as large
- * as the maximum of its red and blue components.
- * @param data a constant pointer to the image data.
- * @param width the width of the image in pixels
- * @param height the height of the image in pixels
- * Assume that there are 4 bytes per pixel (RGBA)
+ * Calculates the perimeter of the Triangle t.
+ * @param t the Triangle to examine.
+ * @return the perimeter.
  */
-void greenScreen(unsigned char * const img, int width, int height);
-
-
-// Functions from stb_image and stb_image_write
-// These are C functions
-extern "C" {
-unsigned char* stbi_load(const char* fileName,
-    int* width, int* height, int* bitsPerChannel,
-    int desiredBpp=4);
-
- int stbi_write_png(const char* fName, int width, int height,
-    int comp, const void *data, int stride);
- int stbi_write_bmp(const char* fName, int width, int height,
-    int comp, const void *data);
- int stbi_write_jpg(const char* fName, int width, int height,
-    int comp, const void *data, int quality);
-
- void stbi_image_free (void *);
-};
+double perimeter(const Triangle& t);
 
 #endif

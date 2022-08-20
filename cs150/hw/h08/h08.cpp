@@ -1,25 +1,24 @@
 /**
  *  @author Put your name here
  *  @date Put the date here
- *  @file h09.cpp
+ *  @file h08.cpp
  */
 #include <string>
+#include <iostream>
 using namespace std;
 
-string STUDENT = "WHO AM I"; // Add your Canvas/occ-email ID
+string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 #include "h08.h"
 
-// Put your function implementation (definitions) in this file
+// Place your function definitions in this file.
 
 
 
-
-
-/////////// Student Testing ///////////////////////
-#include <iostream>
+////////////////// STUDENT TESTING /////////////
 int run()
 {
-    // You can add code that "runs" here
+    cout << "Student testing" << endl;
+    // cout << prefixAgain("abXYabc", 1) << endl;
     return 0;
 }

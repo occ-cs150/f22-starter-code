@@ -5,47 +5,27 @@
 */
 #ifndef H22_H_
 #define H22_H_
+#include <vector>
+#include <string>
 
-using UC = unsigned char;
-struct Pixel {UC red{0}, green{0}, blue{0}, alpha{255};};
-enum class Direction {LtoR, RtoL, TtoB, BtoT};
-
-
-/**
- * Flips the image.
- * @param data a constant pointer to the image data.
- * @param width the width of the image in pixels
- * @param height the height of the image in pixels
- * @param the direction to flip the image.
- * Assume 4 bytes per pixel
- */
-void flip(UC* const img, int width, int height, Direction dir);
-
-/**
- * Mirror's the image.
- * @param data a constant pointer to the image data.
- * @param width the width of the image in pixels
- * @param height the height of the image in pixels
- * @param the direction to mirror the image.
- * Assume 4 bytes per pixel
- */
-void mirror(UC* const img, int width, int height, Direction dir);
-
-// Functions from stb_image and stb_image_write
-// These are C functions
-extern "C" {
-unsigned char* stbi_load(const char* fileName,
-    int* width, int* height, int* bitsPerChannel,
-    int desiredBpp=4);
-
- int stbi_write_png(const char* fName, int width, int height,
-    int comp, const void *data, int stride);
- int stbi_write_bmp(const char* fName, int width, int height,
-    int comp, const void *data);
- int stbi_write_jpg(const char* fName, int width, int height,
-    int comp, const void *data, int quality);
-
- void stbi_image_free (void *);
+using pos_type = std::istream::pos_type; // type of stream position
+struct Word
+{
+    std::string word;
+    std::vector<pos_type> positions;
 };
+
+/**
+    Reads any stream until end-of-file. Returns a vector of misspelled words,
+    but not those words that have been excluded.
+    @param in the stream to read from
+    @param dictionary vector of string containing correct-spelled words.
+    @param excluded vector of string containing words to ignore.
+    @return a vector of misspelled words, along with their position in the
+        original file.
+*/
+std::vector<Word> spellCheck(std::istream& in,
+                    const std::vector<std::string>& dictionary,
+                    const std::vector<std::string>& excluded);
 
 #endif

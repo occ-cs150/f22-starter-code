@@ -3,25 +3,46 @@
  *  @date Put the date here
  *  @file h22.cpp
  */
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <stdexcept>
+#include <fstream>
+#include <cctype>
+#include <algorithm>
 using namespace std;
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 #include "h22.h"
 
-// Add your code here
+// Place your function here
+
 
 
 
 
 /////////////// STUDENT TESTING ////////////////////
-
+vector<string> fileToWords(const string& filename);
+#include <sstream>
+#include <iomanip>
 int run()
 {
-    // Just some samples for class
-    cout << "Try some code on your own" << endl;
+    cout << "Student testing" << endl;
+    // vector<string> dictionary = fileToWords("words");
+    // vector<string> ignore = fileToWords("excluded.txt");
+    // istringstream words("Now is the tyme for all good studunts to "
+    //     "come to the aiid of their ai!id classmaates.");
+    // vector<Word> misspelled = spellCheck(words, dictionary, ignore);
+    // cout << "Misspelled words" << endl;
+    // int i{1};
+    // for (const auto& e : misspelled)
+    // {
+    //     cout << setw(4) << i++ << ". " << e.word << ", [ ";
+    //     for (auto pos : e.positions)
+    //         cout << pos << " ";
+    //     cout << "]" << endl;
+    // }
 
     return 0;
 }

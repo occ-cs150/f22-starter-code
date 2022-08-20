@@ -5,35 +5,19 @@
  */
 #include <string>
 #include <iostream>
-#include <sstream>
-#include <iomanip>
 using namespace std;
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
-#include "h14.h"
-
-// Define your functions here
+// Write your function here
 
 
 
 
-/////////////// STUDENT TESTING ////////////////////
+
+//////////////// STUDENT TESTING ////////////////////
 int run()
 {
-    cout << "Student testing" << endl;
-    // do
-    // {
-    //     string s = getLine("Enter a string: ");
-    //     cout << "s->\"" << s << "\"" << endl;
-
-    //     int n = getInt("Enter an integer:");
-    //     cout << "n->" << n << endl;
-
-    //     double d = getReal("Enter a real number: ");
-    //     cout << "d->" << d << endl;
-
-    // } while (getYN("Try again? (Y/N)"));
-
+    //cout << "Student testing" << endl;
     return 0;
 }

@@ -1,33 +1,33 @@
-#ifndef H09_H
-#define H09_H
+/**
+    @file h09.h
+    @author Stephen Gilbert
+    @version CS150 Function Declarations
+*/
+#ifndef H09_H_
+#define H09_H_
 
 #include <string>
 /**
- * Converts an integer to its equivalent Roman digit.
- * @param n value of this digit
- * @param ones Roman symbol for ones
- * @param fives Roman symbol for ones
- * @param tens Roman symbol for tens
- * @return the Roman digit as a string.
+   Computes a barcode given a 5-digit zip code.
+   @param zip the 5-digit zip code.
+   @return the bar code with | for full bars and : for half bars.
  */
-std::string digit(int n, const std::string& symbols);
+std::string barCode(int zip);
 
 /**
- * Converts an Arabic number to its Roman equivalent.
- * @param n the number to convert.
- * @return a string reprenting the Roman numeral.
+   Returns the bar code value for a given digit.
+   @param digit integer
+   @return string encoding of the digit
+*/
+std::string codeForDigit(int digit);
+
+/**
+ * Calculates the check digit for a zip code.
+ * @param zip the zip code
+ * @return check digit for zip according to this rule.
  *
- * @pre the number must be a positive number in range.
- * @post if the number cannot be converted it return an error message
+ * Sum all the digits in the zip code.
  */
-std::string toRoman(int n);
-
-/**
- * Converts individual decimal digit to Roman.
- * These are inline functions (already written.)
- */
-inline string ones(int n) { return digit(n, "IVX"); }
-inline string tens(int n) { return digit(n, "XLC"); }
-inline string hundreds(int n) { return digit(n, "CDM"); }
+int checkDigit(int zip);
 
 #endif

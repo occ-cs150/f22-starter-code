@@ -15,9 +15,10 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 
 
-
 /////////// Student Testing ///////////////////////
+#include <iostream>
 int run()
 {
+    cout << "Student testing" << endl;
     return 0;
 }

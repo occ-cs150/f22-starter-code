@@ -1,26 +1,27 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
- *  @file h13.cpp
+ * @file h13.cpp
+ * @author Your Name Here
+ * @version Section and Semester Here
  */
 #include <string>
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <iomanip>
+#include <cctype>
 using namespace std;
 
-string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
+string STUDENT = "WHO ARE YOU?";  // Add your Canvas login name
 
 #include "h13.h"
 
-// Implement your function here
+namespace enc {
 
+    // Implement your functions here
 
+   
+}
 
-///////////////// Student Testing /////////////////////////
+//////////// Student tests or run
 int run()
 {
-    cout << "Student tests" << endl;
+    cout << "Student Testing" << endl;
     return 0;
 }

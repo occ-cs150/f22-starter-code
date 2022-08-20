@@ -1,25 +1,30 @@
 /**
-    @file h34.cpp
-    @author your name here
-    @version what day and meeting time
-*/
+ *  @author Put your name here
+ *  @date Put the date here
+ *  @file h34.cpp
+ */
 #include <string>
-#include <stdexcept>
-#include <iomanip>
-#include <sstream>
 using namespace std;
-
-#include "h34.h"
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
-// Add your implementation here
+#include "h34.h"
+
+// Implement your class here
 
 
-/////////////// Student Tests ////////////////////////////
+
+
+
+
+//////////////////////// STUDENT TESTING //////////////////////////
 #include <iostream>
 int run()
 {
-	cout << "Student testing" << endl;
-	return 0;
+    cout << "Add your own tests here" << endl;
+    // Bug fred(3);
+    // fred.move();
+    // cout << "fred is now at " << fred.position() << endl;
+
+    return 0;
 }

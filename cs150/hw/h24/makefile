@@ -15,11 +15,14 @@ clean:
 lint:
 	clang++ --analyze -Xanalyzer -analyzer-output=text $(EXE).cpp
 
+debug: $(EXE)
+	debug50 ./$(EXE)
+
 run: $(EXE)
 	./$(EXE)
 
 test: $(EXE)
-	./$(EXE) -t
+	./$(EXE) -t ; true
 
 submit: $(EXE)
 	@./$(EXE) -t 1> /dev/null 2> results.txt; true

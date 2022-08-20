@@ -1,21 +1,26 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
- *  @file h12.cpp
- */
+    @file h12.cpp
+    @author your name here
+    @version what day and meeting time
+*/
 #include <string>
-#include <iostream>
+#include <stdexcept>
 using namespace std;
+
+#include "h12.h"
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
-// Write your function here
+// Add your function implementations here
 
 
-//////////////// STUDENT TESTING ////////////////////
+
+
+////////////////// Student Testing //////////////////////////
+#include <iostream>
 int run()
 {
-    //cout << "Student testing" << endl;
-    strip();
+    cout << "Student testing" << endl;
     return 0;
 }
+

@@ -26,7 +26,7 @@ import os
 with open(os.path.expanduser('./.profile.txt'), 'w') as myfile:
     print('export CXX="g++"', file=myfile)
     print('export CXXFLAGS="-std=c++17 -Wall -Wextra -Werror -O0 -ggdb3 -fsanitize=signed-integer-overflow -fsanitize=undefined -Wno-unused-parameter -Wno-unused-variable -Wshadow"', file=myfile)
-    print('export CS150NAME=' + sname, file=myfile)
+    print('export CS150NAME="' + sname + '"', file=myfile)
     print('export CS150USER=' + student, file=myfile)
     print('export CS150SID=' + sid, file=myfile)
 

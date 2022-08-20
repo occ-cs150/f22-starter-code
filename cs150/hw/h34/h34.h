@@ -1,24 +1,23 @@
-/*
- *	@file h34.h
- *  @author Your name goes here
- *  @version  what day and meeting time
- */
+/**
+    @file h34.h
+    @author Stephen Gilbert
+    @version Declarations for CS 150 Homework
+    // DO NOT MODIFY IN ANY WAY
+*/
 #ifndef H34_H_
 #define H34_H_
 
-#include <string>
-
-/////// Declare all of your classes here ////////////////
-/////// In this order: Worker, SalariedWorker, HourlyWorker
-class Worker
+/** A bug climbing a pole.  */
+class Bug
 {
-	std::string name;
-	double rate;
 public:
-	Worker(const std::string& name, double rate);
-	virtual ~Worker() = default;
-	// Add remaining members here . . .
+    Bug(int startPos);      // construct Bug at starting position
+    void move();            // move bug one unit in direction
+    void turn();            // Change the direction from left to right or vice-versa
+    int position() const;   // Return the position
+private:
+    int m_position;
+    int m_direction;
 };
-
 
 #endif

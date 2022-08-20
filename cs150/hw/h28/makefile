@@ -15,6 +15,9 @@ clean:
 lint:
 	clang++ --analyze -Xanalyzer -analyzer-output=text $(EXE).cpp
 
+debug: $(EXE)
+	debug50 ./$(EXE)
+
 run: $(EXE)
 	./$(EXE)
 

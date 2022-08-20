@@ -1,2 +1,0 @@
-first line - should now be second
-second line - should now be first

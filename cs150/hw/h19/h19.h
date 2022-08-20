@@ -1,35 +1,51 @@
 /**
     @file h19.h
-    @author Stephen Gilbert
-    @version Declarations for CS 150 Homework
+    @author YOUR NAME HERE
+    @date what day and meeting time
+    Declarations for CS 150 Homework
 */
 #ifndef H19_H_
 #define H19_H_
 
+#include <vector>
+#include <stdexcept>
+#include <string>
+#include <iostream>
+#include <sstream>
+
+// Place your Point structure definitions here
+
+
+
+
 /**
- * Reverses (inverts) every pixel in img, except any alpha pixels.
- * @param data a constant pointer to the image data.
- * @param width the width of the image in pixels
- * @param height the height of the image in pixels
- * Assume 4 bits per pixel
+ * Reads a point in the form x,y.
+ * @param in the input stream.
+ * @param p the Point to populate
  */
-void negative(unsigned char * const img, int width, int height);
+void get(std::istream& in, Point& p);
 
-// Functions from stb_image and stb_image_write
-// These are C functions
-extern "C" {
-unsigned char* stbi_load(const char* fileName,
-    int* width, int* height, int* bitsPerChannel,
-    int desiredBpp=4);
+/**
+ * Displays a Point in the form (x, y).
+ * @param out the stream to print on
+ * @param p the Point to print
+ */
+void print(std::ostream& out, const Point& p);
 
- int stbi_write_png(const char* fName, int width, int height,
-    int comp, const void *data, int stride);
- int stbi_write_bmp(const char* fName, int width, int height,
-    int comp, const void *data);
- int stbi_write_jpg(const char* fName, int width, int height,
-    int comp, const void *data, int quality);
+/**
+ * Calculate the distance between two Points.
+ * @param a the first point.
+ * @param b the second point.
+ * @return the distance as a double.
+ */
+double distanceBetween(const Point& a, const Point& b);
 
- void stbi_image_free (void *);
-};
+/**
+ * Given two points, find their midpoint.
+ * @param a the first point.
+ * @param b the second point.
+ * @return the midpoint.
+ */
+Point midpoint(const Point& a, const Point& b);
 
 #endif

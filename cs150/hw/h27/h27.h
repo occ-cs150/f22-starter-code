@@ -1,18 +1,32 @@
 /**
- *  @author Put your name here
- *  @date Put the date here
- *  @file h27.h
+    @file h27.h
+    @author Stephen Gilbert
+    @version Declarations for CS 150 Homework
+*/
+#ifndef H27_H_
+#define H27_H_
+
+/**
+ *  Calculates an alternating sum of the elements in a.
+ *  @param a an array of const int.
+ *  @param size the number of elements in the array.
+ *  @pre #size is > 0
+ *  @return the alternating sum of {a, b, c, d} -> a - b + c - d
+ *  Don't worry about overflow of the result.
  */
-#ifndef H27_H
-#define H27_H
+int alternatingSum(const int a[], size_t size);
 
-/** Exits the program and prints [Input failed]. */
-int die();
-
-/** Prints the heading for this assignment */
-void printHeading();
-
-// Add your user-defined type definition here
-
+struct MinMax
+{
+    const double * min = nullptr;
+    const double * max = nullptr;
+};
+/**
+ * Returns pointers to the extreme values in the array.
+ * @param a pointer the first element in an array of doubles
+ * @param size the number of elements in the array.
+ * @return a MinMax structure; nullptrs if size is 0.
+ */
+MinMax minMax(const double *ptr, size_t size);
 
 #endif

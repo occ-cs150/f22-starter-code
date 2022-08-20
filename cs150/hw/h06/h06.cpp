@@ -7,10 +7,9 @@
 #include <cctype>
 using namespace std;
 
-string STUDENT = "WHO AM I";  // Add your Canvas login name
+string STUDENT = "sgilbert"; //"WHO AM I?";  // Add your Canvas login name
 
 // Add your function here
-
 
 
 

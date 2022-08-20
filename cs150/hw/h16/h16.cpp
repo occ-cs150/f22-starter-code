@@ -4,13 +4,19 @@
  *  @file h16.cpp
  */
 #include <string>
-#include <cmath>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
 using namespace std;
 
 string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 
 #include "h16.h"
-// Add your implementation here
+
+// Define your functions here
+
+
+
 
 
 
@@ -18,12 +24,19 @@ string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
 int run()
 {
     cout << "Student testing" << endl;
-    // cout << "Enter a point as (x, y): ";
-    // Point p;
-    // get(cin, p);
-    // cout << "You entered ";
-    // print(cout, p);
-    // cout << endl;
+   /*
+    do
+    {
+        string s = getLine("Enter a string: ");
+        cout << "s->\"" << s << "\"" << endl;
 
+        int n = getInt("Enter an integer:");
+        cout << "n->" << n << endl;
+
+        double d = getReal("Enter a real number: ");
+        cout << "d->" << d << endl;
+
+    } while (getYN("Try again? (Y/N)"));
+   */
     return 0;
 }

@@ -1,22 +1,19 @@
-/*
- *  h33.h
- *  @author your name goes here
- *  @version your section and day
- *  Point->Circle->Cylinder
+/**
+ *  @author Put your name here
+ *  @date Put the date here
+ *  @file h33.h
  */
+#ifndef H33_H
+#define H33_H
 
-#ifndef H33_H_
-#define H33_H_
+/** Prints [Input failed] and returns -1. */
+int die();
 
-#include "point.h"
-#include <cmath>
-#include <string>
+/** Prints the heading for this assignment */
+void printHeading();
 
-// Use this for PI
-const double PI = std::acos(-1.0);
+// Add your user-defined type definition here
 
-//////// Put your class definitions here /////////////////////
-// Put Circle first, then Cylinder
 
 
 #endif

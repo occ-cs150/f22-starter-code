@@ -1,71 +1,68 @@
 /**
-    @file h33.cpp
-    @author your name here
-    @version what day and meeting time
-*/
+ *  @author Put your name here
+ *  @date Put the date here
+ *  @file h33.cpp
+ */
+#include <iostream>
 #include <string>
-#include <stdexcept>
-#include <sstream>
 #include <iomanip>
 using namespace std;
 
-string STUDENT = "WHO AM I?"; // Add your Canvas/occ-email ID
-
 #include "h33.h"
-///////// Add your code here ///////////////
 
-Circle::Circle(double r, double x, double y)
-    : Point(x, y), radius(r) {}
+string STUDENT = "Who Are You?";  // Add your Canvas login name
+extern string ASSIGNMENT;
 
-double Circle::getRadius() const { return radius; }
+// Implement your member functions here
 
-double Circle::getArea() const
-{
-    return PI * radius * radius;
 
-}
-double Circle::getCircumference() const
-{
-    return 2 * PI * radius;
 
-}
-string Circle::toString(int decimals) const
-{
-    ostringstream out;
-    out << fixed << setprecision(decimals);
-    out << "Circle(radius=" << radius << ", center="
-        << Point::toString(decimals) << ")";
-    return out.str();
-};
 
-Cylinder::Cylinder(double h, double r, double x, double y)
-    : Circle(r, x, y), height(h) {}
 
-double Cylinder::getHeight() const { return height; }
 
-double Cylinder::getVolume() const
-{
-    return PI * getRadius() * getRadius() * height;
-}
-
-double Cylinder::getArea() const
-{
-    return 2 * Circle::getArea() + 2 * PI * getRadius() * height;
-}
-
-string Cylinder::toString(int decimals) const
-{
-    ostringstream out;
-    out << fixed << setprecision(decimals);
-    out << "Cylinder(height=" << height
-        << ", base=" << Circle::toString(decimals) << ")";
-    return out.str();
-};
-
-//////////////// Student Tests ////////////////////////////
-#include <iostream>
+// Predefined functions for this assignment
 int run()
 {
-    cout << "Student testing" << endl;
+    printHeading();
+
+    Time startTime;
+    Time duration;
+
+    // Input section
+    cout << "    Time: ";
+    if (! startTime.read(cin)) { return die(); }
+    cout << "    Duration: ";
+    if (! duration.read(cin)) { return die(); }
+
+    // Processing section
+    Time after = startTime.sum(duration);
+    Time before = startTime.difference(duration);
+
+    // Output section
+    cout << endl;
+    duration.print(cout) << " hours after, and before, ";
+    startTime.print(cout) << " is [";
+    after.print(cout) << ", ";
+    before.print(cout) << "]" << endl;
+
     return 0;
+}
+
+void printHeading()
+{
+    cout << STUDENT << "-" << ASSIGNMENT << ": Time and Again" << endl;
+    cout << "------------------------------------------" << endl;
+    cout << "Give me a time (such as 3:57) and a duration\n"
+        << "(such as 1:05), and I'll tell you the sum\n"
+        << "(that is, the time that follows the given time\n"
+        << "by the given duration), and difference (the time that\n"
+        << "precedes the given time by that duration)." << endl;
+    cout << endl;
+}
+
+int die()
+{
+    cout << "[Failed Input]" << endl;
+    cout.flush();
+    return -1;
 }
